@@ -1,0 +1,32 @@
+
+<html>
+  <head>
+    <title>ACME CRUD SEQ</title>
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="/public/stylesheet.css" /> -->
+  </head>
+  <body>
+    <h3>Preston's ACME USERS CRUD SEQ</h3>
+    <div  class='container'>
+        <ol >
+          <% users.forEach(_user => { %>
+            <li class= 'nav-item'>
+              <a href='/users/<%= _user.id %>' class='nav-link'>
+                <%= _user.name %>
+              </a>
+                <form method='post' action='/users/<%= _user.id %>?_method=delete'>
+                <button class='btn btn-danger'>Delete</button>
+              </form>
+            </li>
+          <% }) %>
+          </ol>
+          <form method='post' action='/users'>
+            name: <br>
+            <input type="text" name="name">
+          <button>Add User</button>
+        </form>
+
+
+    </div>
+  </body>
+  </html>
