@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const ejs = require('ejs');
 const methodOverride = require('method-override');
 
-app.use('/public', express.static('public'));
+// app.use('/public', express.static('public'));
 app.use(methodOverride('_method'));
 app.use(morgan('combined'));
 app.use(bodyParser.urlencoded({ extended: false }))

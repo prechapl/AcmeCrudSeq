@@ -1,8 +1,5 @@
-const { app } = require('./app');
 const Sequelize = require('sequelize');
 const conn = new Sequelize(process.env.DATABASE_URL);
-// const conn = new Sequelize(process.env.DATABASE_URL, 'MacPro6', '', {dialect: 'postgres' });
-// const conn = new Sequelize('postgres://localhost/acme-crud-seq');
 
 const User = conn.define('user', {
     name: Sequelize.STRING
